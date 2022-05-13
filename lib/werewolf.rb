@@ -1,5 +1,5 @@
 class Werewolf
-  attr_reader :name
+  attr_reader :name,
               :location
 
   attr_accessor :human,
@@ -21,6 +21,13 @@ class Werewolf
       true
     end
   end
+
+  def respond_to?
+    if @human
+      :change!
+    end
+  end
+
 
   def change!
     @change += 1
